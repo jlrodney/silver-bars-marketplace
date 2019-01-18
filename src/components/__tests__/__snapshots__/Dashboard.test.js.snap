@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard component should render Dashboard correctly 1`] = `
+<div>
+  <Header
+    subtitle="Live order board"
+    title="SilverBars Marketplace"
+  />
+  <Orders
+    orders={Array []}
+  />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <Orders
+    orders={Array []}
+  />
+  <AddOrderForm
+    onSubmit={[Function]}
+  />
+</div>
+`;
+
+exports[`onSubmit method should update state of buyOrders accordingly 1`] = `
+<Dashboard>
+  <div>
+    <Header
+      subtitle="Live order board"
+      title="SilverBars Marketplace"
+    >
+      <div>
+        <h1>
+          SilverBars Marketplace
+        </h1>
+        <h2>
+          Live order board
+        </h2>
+      </div>
+    </Header>
+    <Orders
+      orders={
+        Array [
+          Object {
+            "orderId": "380c9a31-feca-4283-9eb0-fd0e62a70848",
+            "price": 3300,
+            "quantity": 320,
+            "type": "BUY",
+            "userId": "user1",
+          },
+        ]
+      }
+    >
+      <div>
+        <Order
+          key="380c9a31-feca-4283-9eb0-fd0e62a70848"
+          price={3300}
+          quantity={320}
+          type="BUY"
+          userId="user1"
+        >
+          <div>
+            <p>
+              <span>
+                user1
+                 
+              </span>
+              <span>
+                320
+                 
+              </span>
+              <span>
+                3300
+                 
+              </span>
+              <span>
+                BUY
+                 
+              </span>
+            </p>
+          </div>
+        </Order>
+      </div>
+    </Orders>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <Orders
+      orders={Array []}
+    >
+      <div />
+    </Orders>
+    <AddOrderForm
+      onSubmit={[Function]}
+    >
+      <div>
+        <form
+          onSubmit={[Function]}
+        >
+          <input
+            autoFocus={true}
+            name="userId"
+            onChange={[Function]}
+            placeholder="UserId"
+            type="number"
+            value="user1"
+          />
+          <input
+            name="price"
+            onChange={[Function]}
+            placeholder="Price £/kg"
+            type="text"
+            value="33"
+          />
+          <input
+            name="quantity"
+            onChange={[Function]}
+            placeholder="Quantity (kg)"
+            value={320}
+          />
+          <select
+            name="type"
+            onChange={[Function]}
+            value="BUY"
+          >
+            <option
+              value="BUY"
+            >
+              BUY
+            </option>
+            <option
+              value="SELL"
+            >
+              SELL
+            </option>
+          </select>
+          <button
+            className="button"
+          >
+            Place Order
+          </button>
+        </form>
+      </div>
+    </AddOrderForm>
+  </div>
+</Dashboard>
+`;
+
+exports[`onSubmit method should update state of sellOrders accordingly 1`] = `
+<Dashboard>
+  <div>
+    <Header
+      subtitle="Live order board"
+      title="SilverBars Marketplace"
+    >
+      <div>
+        <h1>
+          SilverBars Marketplace
+        </h1>
+        <h2>
+          Live order board
+        </h2>
+      </div>
+    </Header>
+    <Orders
+      orders={Array []}
+    >
+      <div />
+    </Orders>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <Orders
+      orders={
+        Array [
+          Object {
+            "orderId": "c3602fc2-09ad-4fac-b383-b19da5dd3e18",
+            "price": 3300,
+            "quantity": 320,
+            "type": "SELL",
+            "userId": "user1",
+          },
+        ]
+      }
+    >
+      <div>
+        <Order
+          key="c3602fc2-09ad-4fac-b383-b19da5dd3e18"
+          price={3300}
+          quantity={320}
+          type="SELL"
+          userId="user1"
+        >
+          <div>
+            <p>
+              <span>
+                user1
+                 
+              </span>
+              <span>
+                320
+                 
+              </span>
+              <span>
+                3300
+                 
+              </span>
+              <span>
+                SELL
+                 
+              </span>
+            </p>
+          </div>
+        </Order>
+      </div>
+    </Orders>
+    <AddOrderForm
+      onSubmit={[Function]}
+    >
+      <div>
+        <form
+          onSubmit={[Function]}
+        >
+          <input
+            autoFocus={true}
+            name="userId"
+            onChange={[Function]}
+            placeholder="UserId"
+            type="number"
+            value="user1"
+          />
+          <input
+            name="price"
+            onChange={[Function]}
+            placeholder="Price £/kg"
+            type="text"
+            value="33"
+          />
+          <input
+            name="quantity"
+            onChange={[Function]}
+            placeholder="Quantity (kg)"
+            value={320}
+          />
+          <select
+            name="type"
+            onChange={[Function]}
+            value="SELL"
+          >
+            <option
+              value="BUY"
+            >
+              BUY
+            </option>
+            <option
+              value="SELL"
+            >
+              SELL
+            </option>
+          </select>
+          <button
+            className="button"
+          >
+            Place Order
+          </button>
+        </form>
+      </div>
+    </AddOrderForm>
+  </div>
+</Dashboard>
+`;
