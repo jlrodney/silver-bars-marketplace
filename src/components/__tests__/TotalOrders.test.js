@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Orders from '../Orders';
+import TotalOrders from '../TotalOrders';
 
 const buyOrders = [
   {
@@ -36,18 +36,13 @@ const sellOrders = [
   }
 ]
 describe('Orders component', () => {
-  it('should render Orders with indivual orders', () => {
-    const wrapper = shallow(<Orders orders={buyOrders} />);
+  it('should render Orders with indivual  orders', () => {
+    const wrapper = shallow(<TotalOrders buyOrders={buyOrders} sellOrders={sellOrders}/>);
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render Orders with indivual orders', () => {
-    const wrapper = shallow(<Orders orders={sellOrders} />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render Orders with an empty message', () => {
-    const wrapper = shallow(<Orders orders={[]} />);
-    expect(wrapper).toMatchSnapshot();
+  it('should render Orders with All orders header', () => {
+    const wrapper = shallow(<TotalOrders buyOrders={buyOrders} sellOrders={sellOrders} />);
+    expect(wrapper.find('p').text()).toEqual('All orders');
   });
 });

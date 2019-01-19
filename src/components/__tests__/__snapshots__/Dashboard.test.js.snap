@@ -6,21 +6,27 @@ exports[`Dashboard component should render Dashboard correctly 1`] = `
     subtitle="Live order board"
     title="SilverBars Marketplace"
   />
+  <AddOrderForm
+    onSubmit={[Function]}
+  />
   <p>
-    Combined Sells
+    Sells
   </p>
   <CombinedOrders
     orders={Array []}
   />
   <br />
   <p>
-    Combined Buys
+    Buys
   </p>
   <CombinedOrders
     orders={Array []}
   />
-  <AddOrderForm
-    onSubmit={[Function]}
+  <br />
+  <TotalOrders
+    buyOrders={Array []}
+    handleDeleteOrder={[Function]}
+    sellOrders={Array []}
   />
 </div>
 `;

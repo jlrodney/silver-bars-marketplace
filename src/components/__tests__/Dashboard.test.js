@@ -50,7 +50,7 @@ describe('onSubmit method', () => {
     expect(wrapper.state().buyOrders.length).toEqual(1)
   });
 
-  it('should update state of sellOrders accordingly', () => {
+  it('should update state of sellOrders accordingly and then delete it', () => {
     const wrapper = mount(<Dashboard />);
     let value = 'user1';
     wrapper.find('input').at(0).simulate('change', {
@@ -71,6 +71,34 @@ describe('onSubmit method', () => {
     wrapper.find('form').simulate('submit', {
       preventDefault: () => { }
     });
-    expect(wrapper.state().sellOrders.length).toEqual(1)
+    expect(wrapper.state().sellOrders.length).toEqual(1);
+    wrapper.find('.removeOrderButton').simulate('click');
+    expect(wrapper.state().sellOrders.length).toEqual(0);
+  });
+
+  it('should update state of buy orders and then delet it', () => {
+    const wrapper = mount(<Dashboard />);
+    let value = 'user1';
+    wrapper.find('input').at(0).simulate('change', {
+      target: { value }
+    });
+    value = '33';
+    wrapper.find('input').at(1).simulate('change', {
+      target: { value }
+    });
+    value = 320;
+    wrapper.find('input').at(2).simulate('change', {
+      target: { value }
+    });
+    value = "BUY";
+    wrapper.find('select').simulate('change', {
+      target: { value }
+    });
+    wrapper.find('form').simulate('submit', {
+      preventDefault: () => { }
+    });
+    expect(wrapper.state().buyOrders.length).toEqual(1);
+    wrapper.find('.removeOrderButton').simulate('click');
+    expect(wrapper.state().buyOrders.length).toEqual(0);
   });
 });

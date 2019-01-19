@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Orders component should render Orders with indivual  orders 1`] = `
+<div>
+  <div>
+     
+    <p>
+      All orders
+    </p>
+    <IndividualOrder
+      key="xyz998"
+      orderId="xyz998"
+      price={230}
+      quantity={222}
+      type="SELL"
+      userId="1"
+    />
+    <IndividualOrder
+      key="xyz989"
+      orderId="xyz989"
+      price={230}
+      quantity={22}
+      type="SELL"
+      userId="2"
+    />
+  </div>
+  <div>
+    <IndividualOrder
+      key="xyz986"
+      orderId="xyz986"
+      price={230}
+      quantity={22}
+      type="BUY"
+      userId="1"
+    />
+    <IndividualOrder
+      key="xyz987"
+      orderId="xyz987"
+      price={2300}
+      quantity={32}
+      type="BUY"
+      userId="3"
+    />
+  </div>
+</div>
+`;

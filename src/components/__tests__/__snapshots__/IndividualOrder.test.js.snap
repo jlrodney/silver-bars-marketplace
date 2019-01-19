@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expense item should render correctly 1`] = `
+<div>
+  <p>
+    BUY
+    : 
+    22
+     kg for £
+    230
+     [
+    1
+    ]
+    <button
+      className="removeOrderButton"
+      onClick={[Function]}
+    >
+      remove
+    </button>
+  </p>
+</div>
+`;

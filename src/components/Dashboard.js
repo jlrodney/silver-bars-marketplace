@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import AddOrderForm from './AddOrderForm';
-import Orders from './Orders';
+import TotalOrders from './TotalOrders';
 import CombinedOrders from './CombinedOrders';
 
 export default class Dashboard extends React.Component {
@@ -22,18 +22,34 @@ export default class Dashboard extends React.Component {
     }
   };
 
-
+  handleDeleteOrder = (orderToRemove) => {
+    if (orderToRemove[1] === "BUY") {
+      this.setState((prevState) => ({
+        buyOrders: prevState.buyOrders.filter((order) => orderToRemove[0] !== order.orderId)
+      }));
+    } else if (orderToRemove[1] === "SELL") {
+      this.setState((prevState) => ({
+        sellOrders: prevState.sellOrders.filter((order) => orderToRemove[0] !== order.orderId)
+      }));
+    }
+  };
 
   render() {
     return (
       <div>
         <Header />
-        <p>Combined Sells</p>
+        <AddOrderForm onSubmit={this.addOrder} />
+        <p>Sells</p>
         <CombinedOrders orders={this.state.sellOrders}/>
         <br/>
-        <p>Combined Buys</p>
+        <p>Buys</p>
         <CombinedOrders orders={this.state.buyOrders}/>
-        <AddOrderForm onSubmit={this.addOrder} />
+        <br />
+        <TotalOrders
+          buyOrders={this.state.buyOrders}
+          sellOrders={this.state.sellOrders}
+          handleDeleteOrder={this.handleDeleteOrder}
+        />
       </div>
     );
   }
