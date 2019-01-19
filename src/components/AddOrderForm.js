@@ -57,6 +57,7 @@ export default class AddOrderForm extends React.Component {
       <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
+        <label htmlFor="userId">User id: </label>
           <input
             name="userId"
             type="text"
@@ -65,6 +66,7 @@ export default class AddOrderForm extends React.Component {
             value={this.state.userId}
             onChange={this.onUserIdChange}
           />
+          <label htmlFor="price"> Price (£/kg): </label>
           <input
             name="price"
             type="text"
@@ -72,6 +74,7 @@ export default class AddOrderForm extends React.Component {
             value={this.state.price}
             onChange={this.onPriceChange}
           />
+          <label htmlFor="quantity"> Quantity (kg): </label>
           <input
           name="quantity"
           type="text"

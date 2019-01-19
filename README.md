@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SilverBars Marketplace
 
-## Available Scripts
 
-In the project directory, you can run:
+A JavaScript implementation of a simple trading board app allowing the registering of Buy and Sell orders and displaying them on a live order board.
 
-### `npm start`
+## Technologies
+This software was written in JavaScript making use of React for the app and Jest and Enzyme for testing. Test coverage was provided by Jest and linting was provided by ESLint.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+To use this app clone this repo.
+```
+git clone https://github.com/jlrodney/silver-bars-marketplace.git
+```
+Install the dependencies
+```
+$ npm install
+```
+To run the tests, run Jest
+```
+$ npm test
+```
+To start the app
+```
+$ npm start
+```
+Then go to http://localhost:3000/ in the browser.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User stories
+-------------
 
-### `npm run build`
+```
+As a user,
+So that I can determine the demand for silver bars,
+I want to see a summary of orders.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+As a user,
+So that I can analyse the demand for silver bars,
+I want to see order of the same price merged together.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+As a user,
+So that I can analyse the prices of silver bars,
+I want to see buy orders grouped in descending price order and sell orders grouped in ascending price order.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+As a user,
+So that I can register an order (buy/sell),
+I want to be able to upload an order to a live order board with the order quantity, price and type.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+As a user,
+So that I can remove an order,
+I want to be be able to cancel a registered order.
+```

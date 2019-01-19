@@ -5,6 +5,11 @@ exports[`Add order form component should render error for invalid form submissio
   <form
     onSubmit={[Function]}
   >
+    <label
+      htmlFor="userId"
+    >
+      User id: 
+    </label>
     <input
       autoFocus={true}
       name="userId"
@@ -13,6 +18,11 @@ exports[`Add order form component should render error for invalid form submissio
       type="text"
       value=""
     />
+    <label
+      htmlFor="price"
+    >
+       Price (£/kg): 
+    </label>
     <input
       name="price"
       onChange={[Function]}
@@ -20,6 +30,11 @@ exports[`Add order form component should render error for invalid form submissio
       type="text"
       value=""
     />
+    <label
+      htmlFor="quantity"
+    >
+       Quantity (kg): 
+    </label>
     <input
       name="quantity"
       onChange={[Function]}
@@ -60,6 +75,11 @@ exports[`Add order form component should render error for invalid form submissio
   <form
     onSubmit={[Function]}
   >
+    <label
+      htmlFor="userId"
+    >
+      User id: 
+    </label>
     <input
       autoFocus={true}
       name="userId"
@@ -68,6 +88,11 @@ exports[`Add order form component should render error for invalid form submissio
       type="text"
       value=""
     />
+    <label
+      htmlFor="price"
+    >
+       Price (£/kg): 
+    </label>
     <input
       name="price"
       onChange={[Function]}
@@ -75,6 +100,11 @@ exports[`Add order form component should render error for invalid form submissio
       type="text"
       value=""
     />
+    <label
+      htmlFor="quantity"
+    >
+       Quantity (kg): 
+    </label>
     <input
       name="quantity"
       onChange={[Function]}
@@ -112,6 +142,11 @@ exports[`Add order form component should render form 1`] = `
   <form
     onSubmit={[Function]}
   >
+    <label
+      htmlFor="userId"
+    >
+      User id: 
+    </label>
     <input
       autoFocus={true}
       name="userId"
@@ -120,6 +155,11 @@ exports[`Add order form component should render form 1`] = `
       type="text"
       value=""
     />
+    <label
+      htmlFor="price"
+    >
+       Price (£/kg): 
+    </label>
     <input
       name="price"
       onChange={[Function]}
@@ -127,6 +167,11 @@ exports[`Add order form component should render form 1`] = `
       type="text"
       value=""
     />
+    <label
+      htmlFor="quantity"
+    >
+       Quantity (kg): 
+    </label>
     <input
       name="quantity"
       onChange={[Function]}
@@ -164,6 +209,11 @@ exports[`Add order form component should render form correctly with order 1`] = 
   <form
     onSubmit={[Function]}
   >
+    <label
+      htmlFor="userId"
+    >
+      User id: 
+    </label>
     <input
       autoFocus={true}
       name="userId"
@@ -172,6 +222,11 @@ exports[`Add order form component should render form correctly with order 1`] = 
       type="text"
       value=""
     />
+    <label
+      htmlFor="price"
+    >
+       Price (£/kg): 
+    </label>
     <input
       name="price"
       onChange={[Function]}
@@ -179,6 +234,11 @@ exports[`Add order form component should render form correctly with order 1`] = 
       type="text"
       value=""
     />
+    <label
+      htmlFor="quantity"
+    >
+       Quantity (kg): 
+    </label>
     <input
       name="quantity"
       onChange={[Function]}

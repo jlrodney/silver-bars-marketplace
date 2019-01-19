@@ -2,22 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Dashboard from '../Dashboard';
 
-const buyOrder = {
-    orderId: 'xyz986',
-    userId: '1',
-    quantity: 22,
-    price: 230,
-    type: 'BUY'
-};
-
-const sellOrder = {
-    orderId: 'xyz998',
-    userId: '1',
-    quantity: 222,
-    price: 230,
-    type: 'SELL'
-};
-
 describe('Dashboard component', () => {
   it('should render Dashboard correctly', () => {
     const wrapper = shallow(<Dashboard />);
