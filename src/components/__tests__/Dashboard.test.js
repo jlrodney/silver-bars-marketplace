@@ -29,7 +29,6 @@ describe('onSubmit method', () => {
   it('should update state of buyOrders accordingly', () => {
     const wrapper = mount(<Dashboard />);
     let value = 'user1';
-    wrapper.setState({ orderId: '141'})
     wrapper.find('input').at(0).simulate('change', {
       target: { value }
     });
@@ -49,13 +48,11 @@ describe('onSubmit method', () => {
       preventDefault: () => { }
     });
     expect(wrapper.state().buyOrders.length).toEqual(1)
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('should update state of sellOrders accordingly', () => {
     const wrapper = mount(<Dashboard />);
     let value = 'user1';
-    wrapper.setState({ orderId: '141'})
     wrapper.find('input').at(0).simulate('change', {
       target: { value }
     });
@@ -75,6 +72,5 @@ describe('onSubmit method', () => {
       preventDefault: () => { }
     });
     expect(wrapper.state().sellOrders.length).toEqual(1)
-    expect(wrapper).toMatchSnapshot();
   });
 });

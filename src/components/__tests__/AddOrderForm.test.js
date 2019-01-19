@@ -54,6 +54,15 @@ describe('Add order form component', () => {
     expect(wrapper.state('quantity')).toBe(value);
   });
 
+  it('should not set quantity if invalid input', () => {
+    const value = '12.1223333333';
+    const wrapper = shallow(<AddOrderForm />);
+    wrapper.find('input').at(2).simulate('change', {
+      target: { value }
+    });
+    expect(wrapper.state('price')).toBe('');
+  });
+
   it('should set price if valid input', () => {
     const value = '23.50';
     const wrapper = shallow(<AddOrderForm />);
@@ -83,7 +92,6 @@ describe('Add order form component', () => {
     const onSubmitSpy = jest.fn();
     const wrapper = shallow(<AddOrderForm onSubmit={onSubmitSpy} />);
     let value = 'user1';
-    wrapper.setState({ orderId: '141'})
     wrapper.find('input').at(0).simulate('change', {
       target: { value }
     });
@@ -104,7 +112,7 @@ describe('Add order form component', () => {
     });
     expect(wrapper.state('error')).toBe('');
     expect(onSubmitSpy).toHaveBeenLastCalledWith({
-      orderId: '141',
+      orderId: '000000000000',
       userId: 'user1',
       quantity: 320,
       type: 'SELL',

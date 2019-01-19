@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combined orders should have higher price component first for the two buy orders 1`] = `
+<div>
+  <Combined
+    key="2300"
+    price="2300"
+    quantity={32}
+  />
+  <Combined
+    key="230"
+    price="230"
+    quantity={244}
+  />
+</div>
+`;
+
+exports[`Combined orders should have lower price component first for the two sell orders 1`] = `
+<div>
+  <Combined
+    key="230"
+    price="230"
+    quantity={47}
+  />
+  <Combined
+    key="2300"
+    price="2300"
+    quantity={32}
+  />
+</div>
+`;

@@ -1,11 +1,11 @@
 import React from 'react';
-import uuid from 'uuid';
+import uuidv1 from 'uuid/v1';
 
 export default class AddOrderForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      orderId: uuid(),
+      orderId: uuidv1(),
       userId: '',
       quantity: '',
       type: 'BUY',
@@ -18,25 +18,27 @@ export default class AddOrderForm extends React.Component {
     this.setState(() => ({ userId }));
   };
   onQuantityChange = (e) => {
-    const quantity = e.target.value;
-    this.setState(() => ({ quantity }));
-
+    let quantity = String(e.target.value);
+    if ( !quantity || quantity.match(/^\d{1,}(\.\d{0,8})?$/) ) {
+      this.setState(() => ({ quantity }));
+    }
   };
+
   onPriceChange = (e) => {
     const price = e.target.value;
-
-    if (!price || price.match(/^\d{1,}(\.\d{0,2})?$/)) {
+    if ( !price || price.match(/^\d{1,}(\.\d{0,2})?$/) ) {
       this.setState(() => ({ price }));
     }
   };
   onTypeChange = (e) => {
-    const type = e.target.value
-      this.setState(() => ({ type }));
+    const type = e.target.value;
+    this.setState(() => ({ type }));
   };
 
   onSubmit = (e) => {
+    const orderId = uuidv1();
+    this.setState(() => ({ orderId: orderId }));
     e.preventDefault();
-
     if (!this.state.userId || !this.state.price || !this.state.quantity || !this.state.type) {
       this.setState(() => ({ error: 'Please fill in all fields of the form.' }));
     } else {
@@ -46,7 +48,7 @@ export default class AddOrderForm extends React.Component {
         userId: this.state.userId,
         price: parseFloat(this.state.price, 10) * 100,
         type: this.state.type,
-        quantity: this.state.quantity
+        quantity: parseFloat(this.state.quantity, 10)
       });
     }
   };
@@ -57,7 +59,7 @@ export default class AddOrderForm extends React.Component {
         <form onSubmit={this.onSubmit}>
           <input
             name="userId"
-            type="number"
+            type="text"
             placeholder="UserId"
             autoFocus
             value={this.state.userId}
@@ -72,6 +74,7 @@ export default class AddOrderForm extends React.Component {
           />
           <input
           name="quantity"
+          type="text"
           placeholder="Quantity (kg)"
           value={this.state.quantity}
           onChange={this.onQuantityChange}

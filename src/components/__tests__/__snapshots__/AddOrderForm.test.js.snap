@@ -10,7 +10,7 @@ exports[`Add order form component should render error for invalid form submissio
       name="userId"
       onChange={[Function]}
       placeholder="UserId"
-      type="number"
+      type="text"
       value=""
     />
     <input
@@ -24,6 +24,7 @@ exports[`Add order form component should render error for invalid form submissio
       name="quantity"
       onChange={[Function]}
       placeholder="Quantity (kg)"
+      type="text"
       value=""
     />
     <select
@@ -64,7 +65,7 @@ exports[`Add order form component should render error for invalid form submissio
       name="userId"
       onChange={[Function]}
       placeholder="UserId"
-      type="number"
+      type="text"
       value=""
     />
     <input
@@ -78,6 +79,7 @@ exports[`Add order form component should render error for invalid form submissio
       name="quantity"
       onChange={[Function]}
       placeholder="Quantity (kg)"
+      type="text"
       value=""
     />
     <select
@@ -115,7 +117,7 @@ exports[`Add order form component should render form 1`] = `
       name="userId"
       onChange={[Function]}
       placeholder="UserId"
-      type="number"
+      type="text"
       value=""
     />
     <input
@@ -129,6 +131,7 @@ exports[`Add order form component should render form 1`] = `
       name="quantity"
       onChange={[Function]}
       placeholder="Quantity (kg)"
+      type="text"
       value=""
     />
     <select
@@ -166,7 +169,7 @@ exports[`Add order form component should render form correctly with order 1`] = 
       name="userId"
       onChange={[Function]}
       placeholder="UserId"
-      type="number"
+      type="text"
       value=""
     />
     <input
@@ -180,6 +183,7 @@ exports[`Add order form component should render form correctly with order 1`] = 
       name="quantity"
       onChange={[Function]}
       placeholder="Quantity (kg)"
+      type="text"
       value=""
     />
     <select

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import AddOrderForm from './AddOrderForm';
 import Orders from './Orders';
+import CombinedOrders from './CombinedOrders';
 
 export default class Dashboard extends React.Component {
   state = {
@@ -21,21 +22,17 @@ export default class Dashboard extends React.Component {
     }
   };
 
+
+
   render() {
     return (
       <div>
         <Header />
-        <Orders
-          orders={this.state.buyOrders}
-        />
+        <p>Combined Sells</p>
+        <CombinedOrders orders={this.state.sellOrders}/>
         <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <Orders
-          orders={this.state.sellOrders}
-        />
+        <p>Combined Buys</p>
+        <CombinedOrders orders={this.state.buyOrders}/>
         <AddOrderForm onSubmit={this.addOrder} />
       </div>
     );
