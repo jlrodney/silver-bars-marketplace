@@ -5,7 +5,7 @@ exports[`Expense item should render correctly 1`] = `
   <p>
     230
      kg for £
-    0.22
+    22
   </p>
 </div>
 `;

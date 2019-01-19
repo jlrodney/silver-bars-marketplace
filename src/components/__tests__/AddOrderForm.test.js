@@ -36,7 +36,7 @@ describe('Add order form component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should set description on input change', () => {
+  it('should set user id on input change', () => {
     const value = 'user2';
     const wrapper = shallow(<AddOrderForm />);
     wrapper.find('input').at(0).simulate('change', {
@@ -116,7 +116,7 @@ describe('Add order form component', () => {
       userId: 'user1',
       quantity: 320,
       type: 'SELL',
-      price: 3300,
+      price: "33.00"
     });
   });
 });

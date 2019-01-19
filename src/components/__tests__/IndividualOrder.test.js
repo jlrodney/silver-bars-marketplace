@@ -9,7 +9,7 @@ const order = {
     price: 230,
     type: 'BUY'
   }
-describe('Expense item', () => {
+describe('Order item', () => {
   it('should render correctly', () => {
     const wrapper = shallow(<IndividualOrder
       key={order.orderId}

@@ -46,7 +46,7 @@ export default class AddOrderForm extends React.Component {
       this.props.onSubmit({
         orderId: this.state.orderId,
         userId: this.state.userId,
-        price: parseFloat(this.state.price, 10) * 100,
+        price: parseFloat(this.state.price, 10).toFixed(2),
         type: this.state.type,
         quantity: parseFloat(this.state.quantity, 10)
       });
