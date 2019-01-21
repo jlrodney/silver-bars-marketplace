@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import AddOrderForm from '../AddOrderForm';
 import FormErrors from '../FormErrors';
 
@@ -31,17 +31,6 @@ describe('Add order form component', () => {
     const wrapper = shallow(<AddOrderForm />);
     expect(wrapper.find('button').text()).toEqual("Place Order");
   });
-
-  // it('should render error for invalid form submission', () => {
-  //   const wrapper = shallow(<AddOrderForm />);
-  //   expect(wrapper).toMatchSnapshot();
-  //   wrapper.find('form').simulate('submit', {
-  //     preventDefault: () => { }
-  //   });
-  //   console.log(wrapper.state('formErrors'));
-  //   expect(wrapper.state('formErrors').length).toBeGreaterThan(0);
-  //   expect(wrapper).toMatchSnapshot();
-  // });
 
   it('should set user id on input change', () => {
     const value = 'user2';

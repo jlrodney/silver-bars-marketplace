@@ -1,13 +1,13 @@
 import React from 'react';
 import Combined from './Combined';
 // import uuid from 'uuid';
-function combiningOrders (arrayOfOrderObjects) {
+function combiningOrders (arrayOfObjects) {
   let orderPriceQuantObject = {};
-  for ( let i = 0; i < arrayOfOrderObjects.orders.length; i++) {
-    if (!orderPriceQuantObject[arrayOfOrderObjects.orders[i].price]) {
-      orderPriceQuantObject[arrayOfOrderObjects.orders[i].price] = arrayOfOrderObjects.orders[i].quantity;
+  for ( let i = 0; i < arrayOfObjects.orders.length; i++) {
+    if (!orderPriceQuantObject[arrayOfObjects.orders[i].price]) {
+      orderPriceQuantObject[arrayOfObjects.orders[i].price] = arrayOfObjects.orders[i].quantity;
     } else {
-      orderPriceQuantObject[arrayOfOrderObjects.orders[i].price] += arrayOfOrderObjects.orders[i].quantity;
+      orderPriceQuantObject[arrayOfObjects.orders[i].price] += arrayOfObjects.orders[i].quantity;
     }
   }
   return Object.entries(orderPriceQuantObject);
