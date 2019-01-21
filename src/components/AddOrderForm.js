@@ -1,5 +1,6 @@
 import React from 'react';
 import uuidv1 from 'uuid/v1';
+import FormErrors from './FormErrors';
 
 export default class AddOrderForm extends React.Component {
   constructor(props) {
@@ -10,9 +11,16 @@ export default class AddOrderForm extends React.Component {
       quantity: '',
       type: 'BUY',
       price: '',
-      error: ''
+      noErrors: false,
+      formErrors: {
+        parameters: '',
+        positiveNumber: '',
+        stringCheck: '',
+        typeCheck: ''
+      }
     };
   }
+
   onUserIdChange = (e) => {
     const userId = e.target.value;
     this.setState(() => ({ userId }));
@@ -35,14 +43,81 @@ export default class AddOrderForm extends React.Component {
     this.setState(() => ({ type }));
   };
 
-  onSubmit = (e) => {
-    const orderId = uuidv1();
-    this.setState(() => ({ orderId: orderId }));
-    e.preventDefault();
+  validateInputs = async () => {
+      await this.typeCheck();
+      await this.parametersCheck();
+      await this.positiveNumber();
+      await this.stringCheck();
+      this.errorsChecker();
+  }
+
+  parametersCheck = () => {
     if (!this.state.userId || !this.state.price || !this.state.quantity || !this.state.type) {
-      this.setState(() => ({ error: 'Please fill in all fields of the form.' }));
+      this.setState((prevState) => ({ formErrors: {
+        ...prevState.formErrors,
+        parameters: 'Please fill in all fields of the form. ' }}));
     } else {
-      this.setState(() => ({ error: '' }));
+      this.setState((prevState) => ({ formErrors: {
+         ...prevState.formErrors,
+         parameters: ''
+       }}))
+    }
+  }
+
+
+  positiveNumber = () => {
+    if (parseFloat(this.state.price, 10) <= 0 || parseFloat(this.state.quantity, 10) <= 0) {
+      this.setState((prevState) => ({ formErrors: {
+        ...prevState.formErrors,
+        positiveNumber: 'Please ensure both quantity and price are positive numbers. ' }}))
+    } else {
+      this.setState((prevState) => ({ formErrors: {
+         ...prevState.formErrors,
+         positiveNumber: ''
+       }}))
+    }
+  }
+
+  stringCheck = () => {
+    if ( typeof(this.state.userId) !== "string" || typeof(this.state.type) !== "string") {
+      this.setState((prevState) => ({ formErrors: {
+        ...prevState.formErrors,
+        stringCheck: 'Please ensure both userid and order type are strings. ' }}))
+    } else {
+      this.setState((prevState) => ({ formErrors: {
+         ...prevState.formErrors,
+         stringCheck: ''
+       }}))
+    }
+  }
+
+  typeCheck = () => {
+    if (this.state.type !== "BUY" && this.state.type !== "SELL") {
+      this.setState((prevState) => ({ formErrors: {
+        ...prevState.formErrors,
+        typeCheck: 'Please ensure type is either "BUY" or "SELL". ' }}))
+    } else {
+      this.setState((prevState) => ({ formErrors: {
+         ...prevState.formErrors,
+         typeCheck: ''
+       }}))
+    }
+  }
+
+  errorsChecker =  () => {
+     this.noErrors(Object.keys(this.state.formErrors).every((key) => this.state.formErrors[key] === '' ));
+  }
+
+  noErrors = (noErrors) => {
+     this.setState(() => ( { noErrors }))
+  }
+
+  onSubmit =  async (e) => {
+    e.preventDefault();
+    const orderId = uuidv1();
+    this.setState(() => ({ orderId }));
+    await this.validateInputs();
+    if ( this.state.noErrors === true ) {
       this.props.onSubmit({
         orderId: this.state.orderId,
         userId: this.state.userId,
@@ -55,7 +130,7 @@ export default class AddOrderForm extends React.Component {
   render() {
     return (
       <div>
-        {this.state.error && <p>{this.state.error}</p>}
+        <FormErrors formErrors={this.state.formErrors}/>
         <form onSubmit={this.onSubmit}>
         <label htmlFor="userId">User id: </label>
           <input
@@ -87,7 +162,7 @@ export default class AddOrderForm extends React.Component {
             <option value="BUY">BUY</option>
             <option value="SELL">SELL</option>
           </select>
-          <button className="button">Place Order</button>
+          <button className="button" >Place Order</button>
         </form>
       </div>
     )

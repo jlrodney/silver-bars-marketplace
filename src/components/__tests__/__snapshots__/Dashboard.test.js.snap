@@ -9,24 +9,230 @@ exports[`Dashboard component should render Dashboard correctly 1`] = `
   <AddOrderForm
     onSubmit={[Function]}
   />
-  <p>
-    Sells
-  </p>
-  <CombinedOrders
-    orders={Array []}
+  <div
+    className="row"
+  >
+    <div
+      className="column"
+    >
+      <p>
+        Live Order Sells
+      </p>
+      <CombinedOrders
+        orders={Array []}
+      />
+      <br />
+      <p>
+        Live Order Buys
+      </p>
+      <CombinedOrders
+        orders={Array []}
+      />
+      <br />
+    </div>
+    <div
+      className="column"
+    >
+      <TotalOrders
+        buyOrders={Array []}
+        handleDeleteOrder={[Function]}
+        sellOrders={Array []}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard methods addOrder should add an order to the and then handleDeleteOrder should remove it  state 1`] = `
+<div>
+  <Header
+    subtitle="Live order board"
+    title="SilverBars Marketplace"
   />
-  <br />
-  <p>
-    Buys
-  </p>
-  <CombinedOrders
-    orders={Array []}
+  <AddOrderForm
+    onSubmit={[Function]}
   />
-  <br />
-  <TotalOrders
-    buyOrders={Array []}
-    handleDeleteOrder={[Function]}
-    sellOrders={Array []}
+  <div
+    className="row"
+  >
+    <div
+      className="column"
+    >
+      <p>
+        Live Order Sells
+      </p>
+      <CombinedOrders
+        orders={
+          Array [
+            Object {
+              "orderId": "xyz987",
+              "price": 230,
+              "quantity": 22,
+              "type": "SELL",
+              "userId": "1",
+            },
+            Object {
+              "orderId": "xyz234",
+              "price": 230,
+              "quantity": 22,
+              "type": "SELL",
+              "userId": "1",
+            },
+          ]
+        }
+      />
+      <br />
+      <p>
+        Live Order Buys
+      </p>
+      <CombinedOrders
+        orders={
+          Array [
+            Object {
+              "orderId": "xyz986",
+              "price": 230,
+              "quantity": 22,
+              "type": "BUY",
+              "userId": "1",
+            },
+            Object {
+              "orderId": "xyz123",
+              "price": 230,
+              "quantity": 22,
+              "type": "BUY",
+              "userId": "1",
+            },
+          ]
+        }
+      />
+      <br />
+    </div>
+    <div
+      className="column"
+    >
+      <TotalOrders
+        buyOrders={
+          Array [
+            Object {
+              "orderId": "xyz986",
+              "price": 230,
+              "quantity": 22,
+              "type": "BUY",
+              "userId": "1",
+            },
+            Object {
+              "orderId": "xyz123",
+              "price": 230,
+              "quantity": 22,
+              "type": "BUY",
+              "userId": "1",
+            },
+          ]
+        }
+        handleDeleteOrder={[Function]}
+        sellOrders={
+          Array [
+            Object {
+              "orderId": "xyz987",
+              "price": 230,
+              "quantity": 22,
+              "type": "SELL",
+              "userId": "1",
+            },
+            Object {
+              "orderId": "xyz234",
+              "price": 230,
+              "quantity": 22,
+              "type": "SELL",
+              "userId": "1",
+            },
+          ]
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard methods addOrder should add an order to the and then handleDeleteOrder should remove it  state 2`] = `
+<div>
+  <Header
+    subtitle="Live order board"
+    title="SilverBars Marketplace"
   />
+  <AddOrderForm
+    onSubmit={[Function]}
+  />
+  <div
+    className="row"
+  >
+    <div
+      className="column"
+    >
+      <p>
+        Live Order Sells
+      </p>
+      <CombinedOrders
+        orders={
+          Array [
+            Object {
+              "orderId": "xyz234",
+              "price": 230,
+              "quantity": 22,
+              "type": "SELL",
+              "userId": "1",
+            },
+          ]
+        }
+      />
+      <br />
+      <p>
+        Live Order Buys
+      </p>
+      <CombinedOrders
+        orders={
+          Array [
+            Object {
+              "orderId": "xyz123",
+              "price": 230,
+              "quantity": 22,
+              "type": "BUY",
+              "userId": "1",
+            },
+          ]
+        }
+      />
+      <br />
+    </div>
+    <div
+      className="column"
+    >
+      <TotalOrders
+        buyOrders={
+          Array [
+            Object {
+              "orderId": "xyz123",
+              "price": 230,
+              "quantity": 22,
+              "type": "BUY",
+              "userId": "1",
+            },
+          ]
+        }
+        handleDeleteOrder={[Function]}
+        sellOrders={
+          Array [
+            Object {
+              "orderId": "xyz234",
+              "price": 230,
+              "quantity": 22,
+              "type": "SELL",
+              "userId": "1",
+            },
+          ]
+        }
+      />
+    </div>
+  </div>
 </div>
 `;

@@ -39,17 +39,23 @@ export default class Dashboard extends React.Component {
       <div>
         <Header />
         <AddOrderForm onSubmit={this.addOrder} />
-        <p>Sells</p>
-        <CombinedOrders orders={this.state.sellOrders}/>
-        <br/>
-        <p>Buys</p>
-        <CombinedOrders orders={this.state.buyOrders}/>
-        <br />
-        <TotalOrders
-          buyOrders={this.state.buyOrders}
-          sellOrders={this.state.sellOrders}
-          handleDeleteOrder={this.handleDeleteOrder}
-        />
+          <div className="row">
+            <div className="column">
+              <p>Live Order Sells</p>
+              <CombinedOrders orders={this.state.sellOrders}/>
+              <br/>
+              <p>Live Order Buys</p>
+              <CombinedOrders orders={this.state.buyOrders}/>
+              <br />
+            </div>
+            <div className="column">
+              <TotalOrders
+                buyOrders={this.state.buyOrders}
+                sellOrders={this.state.sellOrders}
+                handleDeleteOrder={this.handleDeleteOrder}
+              />
+            </div>
+          </div>
       </div>
     );
   }
