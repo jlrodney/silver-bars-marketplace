@@ -1,7 +1,7 @@
 # SilverBars Marketplace
 
 
-A JavaScript implementation of a simple trading board app allowing the registering of Buy and Sell orders and displaying them on a live order board.
+A JavaScript implementation of a simple trading board app allowing the registering of 'Buy' and 'Sell' orders and displaying them on a live order board.
 
 ## Technologies
 
@@ -28,7 +28,7 @@ $ npm start
 Then go to http://localhost:3000/ in the browser.
 Fill in the fields and click place order to register an order (see screenshot below):
 
-![SilverBars Interface](SilverBars interface.png)
+![SilverBars Interface](SilverBars-interface.png)
 
 ## Design Decisions
 
@@ -38,13 +38,16 @@ I made use of the latest ES6 syntax including object spreading and arrow functio
 
 Some of the input validations are not necessary due to the form restrictions applied, however, they would be useful if this application was extended or adapted.
 
-I fully tested this application. The test coverage was 100% for all files bar one, which is index.js which has only React setup code.  
+I fully tested this application. The test coverage was 100% for all files bar one, which is index.js which has only React setup code.
+
+This app is structured with a Dashboard component which has children components: Header, AddOrderForm, CombinedOrders and TotalOrders. AddOrderForm has a child component FormErrors, CombinedOrders has Combined and TotalOrders has IndividualOrder. 
+
+This structure means that the addOrder function is passed down into the AddOrderForm component as a property and similarly handleDeleteOrder is passed down to TotalOrders and then to IndividualOrder.
 
 ## Further work
 This application could be extended by providing user authentication to ensure each user can only delete their own orders.
 
 ## User stories
--------------
 
 ```
 As a user,
